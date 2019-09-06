@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>info</title>
+  <link media="all" rel="stylesheet" href="css/all.css">
+</head>
+<style>
+  .external {
+    background-color: yellow
+  }
+</style>
+
+<body>
+  <div id="wrapper">
+    <main id="main">
+      <div class="col" style="background-color:#76eab7;width: 320px;">
+        <h3>Глобальный API</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-extend" title="Создаёт «подкласс» базового конструктора Vue. Принимает параметром объект с опциями нового компонента.">Vue.extend( options )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-nextTick" title="Вызов функции callback при следующем цикле обновления DOM. Используйте для работы с обновлённым DOM после изменения данных.">Vue.nextTick( [callback, context] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-set" title="Добавление свойства к реактивному объекту, гарантируя, что новое свойство также будет реактивным и будет вызвано обновление представления. Это пригодится для добавления новых свойств к реактивным объектам, поскольку иначе Vue не может отследить эти изменения (например, this.myObject.newProperty = 'hi').">Vue.set( target, propertyName/index, value )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-delete" title="Удаление поля. Для реактивного объекта будет вызвано обновление шаблона. Необходим, потому что Vue не может отследить неявное удаление полей (но вам редко когда это понадобится).">Vue.delete( target, propertyName/index )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-directive" title="Регистрирует новую глобальную директиву или возвращает уже зарегистрированную.">Vue.directive( id, [definition] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-filter" title="Регистрирует новый глобальный фильтр или возвращает уже зарегистрированный.">Vue.filter( id, [definition] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-component" title="Регистрирует глобальный компонент или возвращает уже зарегистрированный. Регистрация автоматически устанавливает переданный id в name компонента.">Vue.component( id, [definition] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-use" title="Устанавливает плагин Vue.js. Если плагин — объект, у него должен быть публичный метод install. Если плагин — функция, она будет воспринята как метод install. Этот метод будет выполнен с Vue в качестве аргумента.">Vue.use( plugin )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-mixin" title="Применяет примесь ко всем созданным впоследствии экземплярам Vue. Таким образом авторы плагинов могут встраивать желаемое поведение во все компоненты. Не рекомендуется использовать в коде приложений.">Vue.mixin( mixin )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-compile" title="Компилирует строковый шаблон в render-функцию. Доступно только в полной сборке.">Vue.compile( template )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-observable" title="Создание реактивного объекта. Внутренне Vue реализует подобное для объекта, возвращаемого функцией data.">Vue.observable( object )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#Vue-version" title="Возвращает версию Vue в виде строки. Это может пригодиться при разработке плагинов и компонентов, где используются различные стратегии для работы с разными версиями.">Vue.version</a>
+          </li>
+        </ul>
+        <h3>Опции — данные</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#data" title="Объект с данными экземпляра Vue. Vue рекурсивно преобразует его свойства в геттеры/сеттеры, чтобы сделать их «реактивными». Объект должен быть простым: Vue проигнорирует свойства прототипа и нативные объекты, например, из API браузера. Прежде всего, данные должны быть просто данными — не рекомендуется передавать объекты со своим собственным поведением.">data</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#props" title="Список или хэш входных параметров, по которым разрешено получение данных из родительского компонента. Можно использовать простой синтаксис в виде массива, или объект, который предоставляет дополнительные возможности: проверку типов, пользовательские валидации и значения по умолчанию.">props</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#propsData" title="Входные параметры компонента при его создании. Обычно используются для целей модульного тестирования.">propsData</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#computed" title="Вычисляемые свойства, которые будут подмешаны к экземпляру Vue. В геттерах и сеттерах this будет указывать на экземпляр Vue.">computed</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#methods" title="Методы, которые будут подмешаны к экземпляру Vue. Можно запускать эти методы напрямую из экземпляра VM, или использовать их в директивах. this методов указывает на экземпляр Vue.">methods</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#watch" title="Объект, ключи которого — выражения для наблюдения, а значения — коллбэки, вызываемые при их изменении. Значения также могут быть строками с именами методов, или объектами, содержащими дополнительные опции. Экземпляр Vue вызовет $watch() соответствующий каждому ключу объекта при своём создании.">watch</a>
+          </li>
+        </ul>
+        <h3>Опции — DOM</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#el" title="Указывает в какой существующий DOM-элемент монтировать экземпляр Vue. Может быть как строковым CSS-селектором, так и объектом типа HTMLElement.">el</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#template" title="Строковый шаблон с разметкой для экземпляра Vue. Этот шаблон заменяет элемент в точке монтирования. Вся существующая разметка в точке монтирования будет проигнорирована, если в шаблоне нет слота для распределения контента.">template</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#render" title="Альтернатива строковым шаблонам, позволяющая использовать все алгоритмические возможности JavaScript. Render-функция получает первым аргументом метод createElement, необходимый для создания элементов VNode (виртуальных нод).">render</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#renderError" title="Работает только в режиме разработки.">renderError</a>
+          </li>
+        </ul>
+        <h3>Опции — ресурсы</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#directives" title="Хэш директив, доступных экземпляру Vue.">directives</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#filters" title="Хэш фильтров, доступных экземпляру Vue.">filters</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#components" title="Хэш компонентов, доступных экземпляру Vue.">components</a>
+          </li>
+        </ul>
+        <h3>Опции — композиция</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#parent" title="Определяет родительский экземпляр для создаваемого. Устанавливает отношение «родитель-потомок» между ними. Родитель будет доступен дочернему экземпляру посредством this.$parent, а дочерний экземпляр будет добавлен в массив $children родителя.">parent</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#mixins" title="Массив объектов-примесей. Примеси могут содержать те же опции, что и обычные объекты экземпляров Vue — они будут добавлены к основным опциям согласно логике Vue.extend(). Например, если и примесь и объект экземпляра содержат хук created, то будут вызваны оба.">mixins</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#extends" title="Позволяет декларативно наследоваться от другого компонента (который может быть либо простым объектом, либо конструктором), не используя Vue.extend. Главным образом предназначено для облегчения наследования между компонентами, определёнными в одном файле.">extends</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#provide-inject" title="Эта пара опций используется вместе, чтобы позволить компоненту-родителю внедрять зависимости во всех его компонентах-потомках, независимо от того, насколько глубоко в иерархии они находятся, пока они находятся в той же самой родительской цепочке. Если вы знакомы с React, это очень похоже на функцию контекста.">provide / inject</a>
+          </li>
+        </ul>
+        <h3>Опции — разное</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#name" title="Название компонента. Позволяет компоненту рекурсивно вызывать самого себя в шаблоне. Обратите внимание что когда компонент регистрируется глобально посредством Vue.component(), глобальный ID автоматически устанавливается равным его имени.">name</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#delimiters" title="Эта опция доступна только в полной сборке, поддерживающей компиляцию шаблонов в браузере.">delimiters</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#functional" title="Превращает компонент в функциональный, то есть не имеющий собственного состояния (data) и своего экземпляра (this). Такие компоненты по сути — просто render-функция, возвращающая узлы виртуального DOM. Это сильно ускоряет их отрисовку.">functional</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#model" title="Позволяет настроить входной параметр и событие, используемые для работы v-model. По умолчанию, v-model на компоненте использует входной параметр value и событие input. Но для некоторых типов полей, таких как чекбоксы и радиокнопки, может потребоваться использовать входной параметр value для других целей. Использование опции model позволит избежать конфликта в таких случаях.">model</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#inheritAttrs" title="По умолчанию атрибуты из родительской области видимости, которые не были распознаны как входные параметры, будут «проваливаться» и применяться к корневому элементу дочернего компонента как обычные HTML-атрибуты. При создании компонента, который оборачивает элемент или другой компонент, это не всегда может быть ожидаемым поведением. Устанавливая inheritAttrs в false, это поведение по умолчанию может быть отключено. Атрибуты доступны через свойство экземпляра $attrs (также добавленное в версии 2.4.0) и могут быть явно привязаны к некорневому элементу с использованием v-bind.">inheritAttrs</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#comments" title="Когда установлено в значение true, будут сохраняться и отрисовываться HTML-комментарии, найденные в шаблонах. Поведение по умолчанию выбрасывает их.">comments</a>
+          </li>
+        </ul>
+      </div>
+      <div class="col" style="background-color:#76eab7;width: 320px;">
+        <h3>Свойства экземпляра</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-data" title="Объект с данными, над которым экземпляр Vue осуществляет наблюдение. Экземпляр проксирует сюда вызовы своих полей. (Например, vm.a будет указывать на vm.$data.a)">vm.$data</a>
+          </li>
+          <li class="row">
+            <a href="https://ru.vuejs.org/v2/api/#vm-props" title="Объект, предоставляющий доступ к текущим входным данным компонента. Экземпляр Vue проксирует доступ к свойствам своего объекта входных данных." target="_blank">vm.$props</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-el" title="Корневой элемент DOM, управляемый экземпляром Vue.">vm.$el</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-options" title="Опции, переданные в конструктор экземпляра Vue. Полезно, если вы хотите передавать туда собственные опции:">vm.$options</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-parent" title="Экземпляр родителя, если он есть у текущего экземпляра.">vm.$parent</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-root" title="Корневой экземпляр Vue текущего дерева компонентов. Если у экземпляра нет родителя, в этом поле будет он сам.">vm.$root</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-children" title="Компоненты-потомки экземпляра. Обратите внимание, что порядок следования элементов в $children не гарантируется, и этот массив не реактивен. Вместо того, чтобы использовать $children для связывания данных, попробуйте использовать обычный массив и директиву v-for для создания дочерних компонентов, и используйте этот массив как «источник истины».">vm.$children</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-slots" title="Используется для доступа к контенту, указанному через слоты. У каждого именованного слота есть соответствующее значение (например, содержимое slot='foo' попадёт в vm.$slots.foo). Свойство default содержит узлы, не включённые в именованные слоты, либо содержимое v-slot:default.">vm.$slots</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-scopedSlots" title="Используется для доступа к контенту, указанному через слоты с ограниченной областью видимости. Для каждого слота, включая и слот default, объект содержащий соответствующую функцию, что возвращает VNode.">vm.$scopedSlots</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-refs" title="Объект из DOM-элементов и экземпляров компонентов, зарегистрированных с помощью атрибутов ref.">vm.$refs</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-isServer" title="Запущен ли данный экземпляр Vue на сервере.">vm.$isServer</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-attrs" title="Содержит нераспознанные атрибуты (за исключением class и style), указанные для компонента в родительской области видимости. Если у компонента нет объявленных входных параметров, здесь окажутся все атрибуты (кроме class и style). Эти атрибуты можно передавать вниз во внутренние компоненты через v-bind='$attrs' — что может быть полезным при создании компонентов высшего порядка (HOC).">vm.$attrs</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-listeners" title="Содержит обработчики событий v-on из родительской области видимости (без модификаторов .native). Они могут быть переданы во внутренние компоненты через v-on='$listeners' — что может быть полезным при создании прозрачных обёрток компонентов.">vm.$listeners</a>
+          </li>
+        </ul>
+        <h3>Методы экземпляра — данные</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-watch" title="">vm.$watch( expOrFn, callback, [options] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-set" title="Псевдоним глобального метода Vue.set">vm.$set( target, propertyName/index, value )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-delete" title="Псевдоним глобального метода Vue.delete">vm.$delete( target, propertyName/index )</a>
+          </li>
+        </ul>
+        <h3>Методы экземпляра — события</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-on" title="Создаёт подписку на пользовательское событие текущего vm. Такое событие можно породить функцией vm.$emit. Коллбэк получит все дополнительные аргументы, переданные этому методу.">vm.$on</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-once" title="Создаёт подписку на пользовательское событие, но срабатывает только один раз. После первого же использования подписчик будет удалён.">vm.$once( event, callback )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-off" title="Удаляет пользовательские подписчики события.">vm.$off( [event, callback] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-emit" title="Порождает событие в текущем экземпляре. Все дополнительно указанные параметры будут переданы в коллбэк подписки.">vm.$emit( eventName, […args] )</a>
+          </li>
+        </ul>
+        <h3>Методы экземпляра — жизненный цикл</h3>
+        <ul class="list">
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-mount" title="Если при создании экземпляра Vue не была указана опция el, он окажется в «непримонтированном» (unmounted) состоянии, то есть без ассоциированного элемента DOM. Вызовите vm.$mount(), чтобы примонтировать такой экземпляр.">vm.$mount( [elementOrSelector] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-forceUpdate" title="Заставляет экземпляр Vue произвести переотрисовку. Обратите внимание, что этот метод затронет не все дочерние компоненты, а только сам экземпляр и дочерние компоненты с контентными слотами.">vm.$forceUpdate()</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-nextTick" title="Выполняет функцию callback при следующем цикле обновления DOM. Вызывайте сразу после изменения данных, чтобы работать с обновлённым DOM. Функция делает то же самое, что и глобальный Vue.nextTick, но кроме того связывает this с текущим экземпляром в коллбэке.">vm.$nextTick( [callback] )</a>
+          </li>
+          <li class="row">
+            <a target="_blank" href="https://ru.vuejs.org/v2/api/#vm-destroy" title="Полностью уничтожает vm. Очищает связи с другими существующими vm, отвязывает директивы, отменяет все подписки на события.">vm.$destroy()</a>
+          </li>
+        </ul>
+      </div>
+      <hr>
+      <div class="col" style="background-color: #e4bcc8;width: 320px;">
+        <h3>Переменные</h3>
+        <ul class="list">
+          <li class="row">
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/var"
+              title="Объявляет переменную, инициализация переменной значением является необязательной.">var</a>
+          </li>
+          <li class="row">
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/let"
+              title="Объявляет локальную переменную в области видимости блока, инициализация переменной значением является необязательной.">let</a>
+          </li>
+          <li class="row">
+            <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/const"
+              title="Объявляет именованную константу, доступную только для чтения.">const</a>
+          </li>
+        </ul>
+        <h2>DOM</h2>
+        <span class="row" title="возвращает DOM-объект с указанным ID">document.getElementById(blockId)</span>
+        <span class="row"
+          title="возвращает живую коллекцию элементов с указанным тэгом">document.getElementsByTagName(tagName)</span>
+        <span class="row"
+          title="(IE9+) возвращает живую коллекцию элементов с указанным классом">document.getElementsByClassName(className)</span>
+        <span class="row"
+          title="(IE8+) возвращает первый попавшийся в документе элемент по указанному CSS-селектору">document.querySelector(selector)</span>
+        <span class="row"
+          title="(IE8+) возвращает коллекцию элементов по указанному CSS-селектору">document.querySelectorAll(selector)</span>
+        <span class="row"
+          title="создать DOM-объект, где в качестве tagName выступает название тэга">document.createElement(tagName)</span>
+        <span class="row" title="вставить его в конец <body>">document.body.appendChild(block)</span>
+        <span class="row"
+          title="удалить узел box из непосредственного родительского узла hold">hold.removeChild(box)</span>
+        <span class="row" title="заменить">hold.replaceChild(element)</span>
+        <span class="row"
+          title="вставить узел в качестве дочернего для hold перед узлом refNode">hold.insertBefore(newNode,
+          refNode)</span>
+        <span class="row"
+          title="получить родительский узел узла box (у которого в свою очередь аналогично можно вызвать методы узла)">box.parentNode</span>
+        <span class="row"
+          title="получить все дочерние узлы элемента (сейчас поддерживается большинством браузеров)">box.children</span>
+        <h3>работа с классами</h3>
+        <span class="row" title="Получаем <div class=holder active>">element.classList.add('active')</span>
+        <span class="row" title="Получаем <div class=holder active>">element.classList.contains('active')</span>
+        <span class="row" title="Получаем <div class=holder test>">element.classList.remove('active')</span>
+        <span class="row" title="переключает">element.classList.toggle('active')</span>
+        <span class="row" title="Получаем holder test">element.className</span>
+        <span class="row"
+          title="Получаем holder  (да, пробел в конце остаётся. лучше использовать специальные функции для этого)">element.className
+          = element.className.replace('test', '')</span>
+        <span class="row"
+          title="Самый простой способ добавить класс. Получаем holder  active - не очень красиво, но работоспособно.">element.className
+          += ' active'</span>
+        <h3>контент</h3>
+        <span class="row" title="чисто контент">innerHTML</span>
+        <span class="row" title="контент вместе с тегом">outerHTML</span>
+        <span class="row" title="текстовыц контент">textContent</span>
+        <h3>аттрибуты</h3>
+        <span class="row" title="получить значение аттрибута src">element.src</span>
+        <span class="row" title="установить аттрибут src: <img src=none.gif />">element.src = "none.gif"</span>
+        <span class="row" title="проверяет наличие">element.hasAttribute('src')</span>
+        <span class="row" title="аналогично">element.getAttribute('src')</span>
+        <span class="row" title="установить другое значение аттрибута src">element.setAttribute('src',
+          'another.png')</span>
+        <span class="row" title="удалить аттрибут src: <img />">element.removeAttribute('src')</span>
+        <h3>стили</h3>
+        <span class="row" title="">element.style.backgroundColor = 'red';</span>
+        <span class="row" title="">element.style.height = '123px';</span>
+        <span class="row" title="">element.style.backgroundColor = '';</span>
+        <span class="row"
+          title="Получить ВСЕ инлайновые стили в виде строки (аналог: .getAttribute('style'))">element.style.cssText</span>
+        <span class="row"
+          title="Задать ВСЕ инлайновые стили (аналог: .setAttribute('style', '...'))">element.style.cssText =
+          'position:relative; font-size:10px; color:#000'</span>
+        <span class="row" title="выведет 5px взяв стили из CSS">getComputedStyle(box).paddingTop</span>
+        <h3>размеры</h3>
+        <span class="row" title="вернет ширину элемента включая padding">box.clientWidth</span>
+        <span class="row" title="аналогично считается и высота">box.clientHeight</span>
+        <span class="row" title="вернет ширину элемента включая padding и border">box.offsetWidth</span>
+        <span class="row" title="аналогично считается и высота">box.offsetHeight</span>
+      </div>
+      <div class="col" style="background-color: #e4bcc8;width: 300px;">
+        <h2>Работа с числами и строками</h2>
+        <div class="box">
+          <h3>Округление чисел</h3>
+          <span class="row"
+            title="Результат = 1 ( Стандартное математическое округление чисел )">Math.round(0.57)</span>
+          <span class="row"
+            title="Результат = 0 ( Округление вниз. Уменьшает значение дробной части числа до нуля )">Math.floor(0.98)</span>
+          <span class="row"
+            title="Результат = 1 ( Округление вверх. Увеличивает значение дробной части до единицы )">Math.ceil(0.03)</span>
+          <span class="row"
+            title="Результат например = 0.13680980472562554 ( Получение случайного дробного числа в промежутке от нуля до единицы, не включая единицу )">Math.random()</span>
+          <span class="row" title="Получение максимального из переданных чисел: Результат = 9">Math.max(7, 4, 9,
+            8)</span>
+          <span class="row" title="Получение минимального из переданных чисел: Результат = 4">Math.min(7, 4, 9,
+            8)</span>
+          <span class="row" title="Результат = 125 ( Возведение числа 5 в степень 3 )">Math.pow(5, 3)</span>
+          <span class="row" title="Результат = 5 ( Квадратный корень из 25 )">Math.sqrt(25)</span>
+          <span class="row" title="Результат = 3.141592653589793">Math.PI</span>
+          <span class="row" title="Перевеод 45 градусов в радианы">var x = 45 * Math.PI / 180</span>
+          <span class="row" title="Косинус угла 45">Math.cos(x)</span>
+          <span class="row" title="Синус угла 45">Math.sin(x)</span>
+          <span class="row" title="Тангенс угла 45">Math.tan(x)</span>
+          <h3>функция получения рандомного числа</h3>
+          <code>
+            <strong>function</strong> getRandomArbitrary(min, max) {<br>
+            &nbsp;&nbsp;return Math.random() * (max - min) + min;<br>
+            }<br>
+          </code>
+        </div>
+        <div class="box">
+          <h3>Работа со строками</h3>
+          <span class="row" title="преобразование в строку">toString()</span>
+          <span class="row" title="определение номера позиции подстроки в строке">indexOf()</span>
+          <span class="row" title="Чтобы получить символ, используйте вызов">charAt(позиция)</span>
+          <span class="row" title="возвращает подстроку с позиции start до, но не включая end.">substring(start,
+            end)</span>
+          <span class="row" title="возвращает подстроку с позиции start до, но не включая end.">slice(start, end)</span>
+          <span class="row" title="возвращает подстроку с позиции start на длинну.">substr(start, length)</span>
+          <span class="row" title="заменить в строке часть символов на указанные">replace()</span>
+          <span class="row" title="разбить строку на массив элементов">split(separator)</span>
+          <span class="row" title="lowercase">srt.toLowerCase()</span>
+          <span class="row" title="Uppercase">str.toUpperCase()</span>
+          <span class="row" title="проверка на число">isNaN(str)</span>
+          <h3>перевод из строки в целое число</h3>
+          <span class="row" title="68">parseInt('68')</span>
+          <span class="row" title="68, дробная часть будет откинута parseInt">parseInt('68.5')</span>
+          <span class="row"
+            title="68, parseInt идет слева посимвольно пока не встретит нечисловую часть строки, которую отрезает">parseInt('68px')</span>
+        </div>
+      </div>
+      <div class="col" style="background-color: #e4bcc8;width: 400px;">
+        <div class="box">
+          <h2>Array</h2>
+          <span class="row">var array = [ ];</span>
+          <span class="row" title="добавление элемента новый_элемент в конец массива">push(element)</span>
+          <span class="row" title="Удаляет последний элемент из массива и возвращает его:">pop()</span>
+          <span class="row" title="Добавляет элемент в начало массива:">unshift(element)</span>
+          <span class="row" title="Удаляет из массива первый элемент и возвращает его:">shift()</span>
+          <span class="row" title="превратить строку в массив, разбив ее по разделителю s">split(s)</span>
+          <span class="row"
+            title="берет массив и склеивает его в строку, используя str как разделитель.">join(str)</span>
+          <span class="row" title="начиная с позиции from, удалить length элемент">splice(from, length)</span>
+          <span class="row" title="копирует участок массива от begin до end, не включая end">slice(begin, end)</span>
+          <span class="row" title="сортировка значений массива">sort()</span>
+          <span class="row" title="revers">reverse()</span>
+          <span class="row" title="создаёт новый массив, в который копируются элементы из arr">arr.concat()</span>
+          <span class="row" title="false, не все положительные">arr.every(isPositive)</span>
+          <span class="row" title="true, есть хоть одно положительное">arr.some(isPositive)</span>
+          <span class="row" title="для прохода по массиву с вычислением значения.">reduce/reduceRight</span>
+          <code>
+            <h3>перебор массива</h3>
+            <code>
+              for(var i = 0; i < array.length; i++) {<br>
+                &nbsp;&nbsp;alert("Test" + array[i]);<br>
+                }<br>
+                <br>
+                while(a > 0) {<br>
+                &nbsp;&nbsp;alert(a);<br>
+                &nbsp;&nbsp;a--;<br>
+                }<br>
+                <br>
+                while(a > 0) {<br>
+                &nbsp;&nbsp;alert(a);<br>
+                &nbsp;&nbsp;a--;<br>
+                }<br>
+                <br>
+                do {<br>
+                &nbsp;&nbsp;alert(a);<br>
+                &nbsp;&nbsp;a--;<br>
+                } while(a > 0);<br>
+            </code>
+            <h3>forEach для перебора массива более элегантный чем for()</h3>
+            arr.forEach(function(item, i, arr) {<br>
+            &nbsp;&nbsp;...<br>
+            });<br>
+          </code>
+          <h3>используется для фильтрации массива через функцию.</h3>
+          <code>
+            arr.filter(function(number) {<br>
+            &nbsp;&nbsp;return number > 0;<br>
+            });<br>
+          </code>
+          <h3>используется для трансформации массива.</h3>
+          <code>
+            arr.map(function(name) {<br>
+            &nbsp;&nbsp;return name.length;<br>
+            });<br>
+          </code>
+        </div>
+      </div>
+      <div class="col" style="background-color: #e4bcc8;width: 320px;">
+        <div class="box">
+          <h2>Objects</h2>
+          <span class="row" title="">var obj = { };</span>
+          <span class="row"
+            title="Для обращения к свойствам используется запись «через точку», вида объект.свойство, например:">person.name</span>
+          <span class="row" title="Удаление осуществляется оператором delete:">delete person.age</span>
+          <h3>перебор свойств объекта</h3>
+          <code>
+            for (var prop in obj) {<br>
+            &nbsp;&nbsp;/* ... делать что-то с obj[prop] ... */<br>
+            }<br>
+          </code>
+        </div>
+        <div class="box">
+          <h2>If</h2>
+          <code>
+            if (...) {<br>
+            &nbsp;&nbsp;...<br>
+            }<br>
+            <br>
+            if (...) {<br>
+            &nbsp;&nbsp;...<br>
+            }else{...}<br>
+            <br>
+            if (...) {<br>
+            &nbsp;&nbsp;...<br>
+            }else if(...){<br>
+            &nbsp;&nbsp;...<br>
+            }else{...}<br>
+            <br>
+            access = (age > 14) ? true : false;<br>
+            <br>
+            switch(age) {<br>
+            &nbsp;&nbsp;case 16:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;alert('Школьник');<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+            &nbsp;&nbsp;case 17:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;alert('Студент');<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+            &nbsp;&nbsp;case 18:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;alert('Совершеннолетний');<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+            &nbsp;&nbsp;case 19:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;alert('Взрослый');<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+            &nbsp;&nbsp;default:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;alert('Ни одно из условий не выполнено!');<br>
+            }<br>
+          </code>
+        </div>
+      </div>
+      <div class="col" style="background-color: #e4bcc8;width: 320px;">
+        <div class="box">
+          <h2>Timeout</h2>
+          <span class="row" title="">setTimeout(function, milliseconds, param1, param2, ...)</span>
+          <span class="row" title="установить таймер:">var timer = setTimeout(bomb, 5000);</span>
+          <span class="row" title="отменить таймер:">clearTimeout(timer)</span>
+          <span class="row" title="отменить счетчик:">var timer = setInterval(bomb, 5000);</span>
+          <span class="row" title="отменить счетчик">clearInterval(timer);</span>
+        </div>
+        <div class="box">
+          <h2>Events</h2>
+          <span class="row">addEventListener(event, function, useCapture);</span>
+          <span class="row">removeEventListener("mousemove", myFunction);</span>
+          <span class="row" title="Добавление события">block.addEventListener('load', function, false);</span>
+          <h3>принимаем объект события как аргумент с названием "e", название может быть любым однако наиболее
+            распространены "e" или "event"</h3>
+          <code>
+            button.addEventListener('click', function(e) {<br>
+            &nbsp;&nbsp;console.log(e);<br>
+            };<br>
+          </code>
+          <h3>сработают все обработчики события "click" на элементе button, однако родительские элементы даже не узнают
+            о том, что на button нажимали</h3>
+          <code>
+            button.addEventListener('click', function(e) {<br>
+            &nbsp;&nbsp;e.stopPropagation();<br>
+            };<br>
+          </code>
+          <h3>теперь браузер не будет переходить по ссылке сколько бы на нее не нажимал пользователь</h3>
+          <code>
+            button.addEventListener('click', function(e) {<br>
+            &nbsp;&nbsp;e.preventDefault();<br>
+            });<br>
+          </code>
+        </div>
+      </div>
+      <div class="col" style="background-color: #7dd7ff;width: 320px;">
+        <h2>jQuery obj</h2>
+        <span class="row" title="используя квадратные скобки [] получаем чистый DOM-объект">divs[0]</span>
+        <span class="row"
+          title="используя метод eq() получаем jQuery объект из элемента с нужным индексом">divs.eq(0)</span>
+        <span class="row" title="явно указать контекст поиска в качестве второго аргумента:">var links = $('a',
+          headerBlock);</span>
+        <span class="row" title="также можно использовать более наглядный метод .find:">var links =
+          headerBlock.find('a');</span>
+        <h3>each</h3>
+        <code>
+          divs.each(function(index, item){<br>
+          &nbsp;&nbsp;...<br>
+          });<br>
+        </code>
+        <span class="row" title=""></span>
+        <span class="row" title=""></span>
+      </div>
+      <div class="col" style="background-color: #7dd7ff;width: 320px;">
+        <h2>работа с DOM</h2>
+        <div class="two-columns">
+          <div class="column">
+            <h3>Обход набора</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Вызов функции для элементов набора"
+              title="Вызывает заданную функцию для каждого элемента набора.">.each()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Работа функции с элементами набора"
+              title="Вызывает заданную функцию для каждого элемента набора, и в итоге создает новый набор, составленный из значений, возвращенных этой функцией.">.map()</a>
+            <h3>Classes</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление класса"
+              title="Добавляет класс(ы) выбранным элементам страницы">.addClass()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление класса"
+              title="Удаляет классы у выбранных элементов страницы">.removeClass()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Варьировние наличия класса"
+              title="Изменяет наличие класса у выбранных элементов страницы на противоположное (добавляет/удаляет)">.toggleClass()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Наличие класса"
+              title="Проверяет наличие заданного класса хотя бы у одного из выбранных элементов">.hasClass()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с атрибутом value"
+              title="Позволяет получать и изменять значение атрибута <i>value</i> у элементов страницы">.val()</a>
+            <h3>Атрибуты</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с атрибутами"
+              title="Позволяет получать и изменять значение атрибутов у элементов страницы">.attr()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Работа со свойствами"
+              title="Возвращает или изменяет значение свойств у выбранных элементов страницы.">.prop()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление атрибута"
+              title="Удаляет атрибуты у выбранных элементов страницы">.removeAttr()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление свойства"
+              title="Удаляет свойства у выбранных элементах страницы.">.removeProp()</a>
+            <h3>Перемещения по DOM</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск дочерних элементов"
+              title="Находит все дочерние элементы у выбранных элементов. При необходимости, можно указать селектор для фильтрации.">.children()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Ближайший подходящий предок"
+              title="Находит ближайший, соответствующий заданному селектору элемент, из числа следующих: сам выбранный элемент, его родитель, его прародитель, и так далее, до начало дерева DOM.">.closest()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элементов внутри выбранных"
+              title="Находит элементы по заданному селектору, внутри выбранных элементов.">.find()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элементов лежащих после выбранных"
+              title="Находит элементы, которые лежат '''непосредственно''' после каждого из выбранных элементов.">.next()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск всех элементов лежащих после выбранных"
+              title="Находит элементы, которые лежат после каждого из выбранных элементов.">.nextAll()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск части элементов лежащих после выбранных"
+              title="Находит элементы, которые лежат после каждого из выбранных, но не дальше элемента, удовлетворяющего заданному селектору.">.nextUntil()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Спозиционированные родительские элементы"
+              title="Находит ближайшего предка c позиционированием, отличным от static (позиционирование по умолчанию).">.offsetParent()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск родительского элемента"
+              title="Находит родительские элементы у всех выбранных элементов.">.parent()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск всех предков"
+              title="Находит всех предков у выбранных элементов, т.е. не только прямых родителей, но и прародителей, прапрародителей и так далее, до начало дерева DOM.">.parents()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск почти всех предков"
+              title="Находит предков, как и <tt>.parents()</tt>, но прекращает поиск перед элементом, удовлетворяющим заданному селектору.">.parentsUntil()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элементов лежащих перед выбранными"
+              title="Находит элементы, которые лежат '''непосредственно''' перед каждым из выбранных элементов.">.prev()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск всех элементов лежащих перед выбранными"
+              title="Находит элементы, которые лежат перед каждым из выбранных элементов.">.prevAll()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск части элементов лежащих перед выбранными"
+              title="Находит элементы, которые лежат перед каждым из выбранных, но не дальше элемента, соответствующего заданному селектору.">.prevUntil()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элементов лежащих на одном уровне"
+              title="Находит все соседние элементы (под соседними понимаются элементы с общим родителем).">.siblings()</a>
+            <h3>Замена элементов</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Замена элементов"
+              title="Заменяет одни элементы страницы на другие (новые или уже существующие).">.replaceWith()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Замена элементов"
+              title="Заменяет одни элементы страницы на другие (новые или уже существующие).">.replaceAll()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление объектов"
+              title="Удаляет выбранные элементы на странице.">.remove()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление объектов"
+              title="Удаляет выбранные элементы на странице. Удаленные элементы могут быть восстановлены.">.detach()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление содержимого у выбранных объектов"
+              title="Удаляет содержимое элементов на странице.">.empty()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление родительских объектов"
+              title="Удаляет родительские элементы, при этом их содержимое остается на месте.">.unwrap()</a>
+          </div>
+          <div class="column">
+            <h3>работа с сдержимым</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с html-содержимым элемента"
+              title="Позволяет получать и изменять html-содержимое выбранных элементов на странице">.html()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с текстовым содержимым элемента"
+              title="Позволяет получать и изменять текст внутри выбранных элементов на странице">.text()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого в конец элементов"
+              title="Добавляет заданное содержимое в конец элементов на странице">.append()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого в конец элементов"
+              title="Добавляет заданное содержимое в конец элементов на странице">.appendTo()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого в начало элементов"
+              title="Добавляет заданное содержимое в начало элементов на странице">.prepend()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого в начало элементов"
+              title="Добавляет заданное содержимое в начало элементов на странице">.prependTo()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого после элементов"
+              title="Добавляет заданное содержимое после выбранных элементов на странице">.after()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого после элементов"
+              title="Добавляет заданное содержимое после выбранных элементов на странице">.insertAfter()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого перед элементами"
+              title="Добавляет заданное содержимое перед выбранными элементами на странице">.before()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление содержимого перед элементами"
+              title="Добавляет заданное содержимое перед выбранными элементами на странице">.insertBefore()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Обертывание элементов страницы"
+              title="Окружает элементы на странице заданными html-элементами">.wrap()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Обертывание элементов страницы"
+              title="Окружает элементы на странице заданными html-элементами">.wrapAll()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Обертывание содержимого элементов страницы"
+              title="Окружает содержимое выбранных элементов заданными html-элементами">.wrapInner()</a>
+            <h3>Фильтрация набора</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элемента с заданным номером"
+              title="Находит элемент, идущий под заданным номером в наборе выбранных элементов.">.eq()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Фильтрация выбранных элементов"
+              title="Фильтрует набор выбранных элементов с помощью заданного селектора или функции.">.filter()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск первого элемента в наборе"
+              title="Находит первый элемент в наборе.">.first()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элементов с заданным содержимым"
+              title="Фильтрует набор выбранных элементов, оставляя те, которые имеют потомков, соответствующих селектору.">.has()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Проверка наличия элемента"
+              title="Проверяет, содержится ли в наборе, хотя бы один элемент удовлетворяющий заданному селектору.">.is()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск последнего элемента в наборе"
+              title="Находит последний элемент в наборе.">.last()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элементов не соответствующих условиям"
+              title="Находит элементы, не соответствующие заданным условиям.">.not()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Поиск элементов с индексами из заданной области"
+              title="Находит элементы с индексами из определенной области (например от 0 до 5).">.slice()</a>
+            <h3>Другие методы</h3>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление элементов в набор"
+              title="Добавляет заданные элементы в набор.">.add()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Добавление предыдущего набора"
+              title="Добавляет элементы из предыдущего набора, к текущему (речь идет об одной цепочке методов).">.andSelf()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Специальный поиск содержащихся элементов"
+              title="Находит все дочерние элементы у выбранных элементов. В результат, помимо элементов, включается и текст.">.contents()</a>
+            <a class="row" href="http://jquery.page2page.ru/index.php5/Предыдущий набор элементов"
+              title="Возвращает предыдущий набор элементов в текущей цепочке методов.">.end()</a>
+          </div>
+        </div>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Клонирование элементов"
+          title="Делает копию выбранных элементов страницы..">.clone()</a>
+      </div>
+      <div class="col" style="background-color: #7dd7ff;width: 320px;">
+        <h2>стили</h2>
+        <code>
+          $('#header').css('position', 'relative');<br>
+          $('#header').css({<br>
+          &nbsp;&nbsp;position: 'relative',<br>
+          &nbsp;&nbsp;height: 100,<br>
+          &nbsp;&nbsp;width: 30<br>
+          });
+        </code>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с CSS"
+          title="Позволяет получать и изменять css-значения у элементов страницы">.css()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с высотой элемента"
+          title="Позволяет получать и изменять значения высоты элемента (без учета отступов и толщины рамки)">.height()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с высотой элемента"
+          title="Позволяет получить значения высоты элемента (с учетом внутренних отступов, рамки (border-width) и при необходимости внешних отступов (margin))">.outerHeight()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с высотой элемента"
+          title="Позволяет получить значения высоты элемента (с учетом размера внутренних отступов (padding))">.innerHeight()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с шириной элемента"
+          title="Позволяет получать и изменять значения ширины элемента (без учета отступов и толщины рамки)">.width()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с шириной элемента"
+          title="Позволяет получить значения ширины элемента (с учетом внутренних отступов, рамки (border-width) и при необходимости внешних отступов (margin))">.outerWidth()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа с шириной элемента"
+          title="Позволяет получить значения ширины элемента (с учетом размера внутренних отступов (padding))">.innerWidth()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Позиция элемента"
+          title="Позволяет получать и изменять позицию элемента, относительно начала страницы">.offset()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Позиция элемента"
+          title="Позволяет получать и изменять позицию элемента, относительно ближайшего родственника">.position()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Спозиционированные родительские элементы"
+          title="Возвращает ближайшего предка c позиционированием, отличным от static (позиционирование по умолчанию)">.offsetParent()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа со скроллингом элементов"
+          title="Позволяет получать и изменять значения вертикальной прокрутки элементов на странице">.scrollTop()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Работа со скроллингом элементов"
+          title="Позволяет получать и изменять значения горизонтальной прокрутки элементов на странице">.scrollLeft()</a>
+      </div>
+      <div class="col" style="background-color: #7dd7ff;width: 320px;">
+        <h2>Эффекты</h2>
+        <code>
+          box.animate({<br>
+          &nbsp;&nbsp;height: 100,<br>
+          &nbsp;&nbsp;marginTop: 123<br>
+          }, {<br>
+          &nbsp;&nbsp;duration: 500,<br>
+          &nbsp;&nbsp;complete: function() {<br>
+          &nbsp;&nbsp;..callback..<br>
+          &nbsp;&nbsp;}<br>
+          })<br>
+        </code>
+        <h3>Управление анимацией</h3>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Выполнение пользовательской анимации"
+          title="Выполняет анимацию, которая была создана пользователем.">.animate()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Очередь предстоящих функций"
+          title="Предоставляет/изменяет (в зависимости от параметров) очередь функций.">.queue()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Очищение очереди функций"
+          title="Очищает очередь функций.">.clearQueue()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Запуск следующей функции в очереди"
+          title="Начинает выполнение следующей функции в очереди.">.dequeue()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Прекращение текущей анимации"
+          title="Останавливает выполнение текущей анимации.">.stop()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Временное приостановление дальнейших анимаций"
+          title="Приостанавливает выполнение следующих анимаций на заданное время.">.delay()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Поочередное выполнение функций"
+          title="Поочередно выполняет вызов одной из нескольких заданных функций.">.toggle()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Отмена выполнения всех анимаций"
+          title="Отменяет выполнение всех анимаций.">$.fx.off</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Длительность кадра анимаций"
+          title="Размер задержки между соседними кадрами анимации.">$.fx.interval</a>
+        <h3>Готовые анимации</h3>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Появление и иcчезновение элементов"
+          title="Скрывает элементы на странице (за счет плавного изменения его размера и прозрачности).">.hide()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Появление и иcчезновение элементов"
+          title="Показывает элементы на странице (за счет плавного изменения его размера и прозрачности).">.show()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Разворачивание и сворачивание элементов"
+          title="Сворачивает элементы на странице (за счет плавного изменения высоты элементов).">.slideUp()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Разворачивание и сворачивание элементов"
+          title="Разворачивает элементы на странице (за счет плавного изменения высоты элементов)">.slideDown()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Поочередное разворачивание и сворачивание элементов"
+          title="Поочередно разворачивает/сворачивает элементы на странице, как это делают .slideUp() и .slideDown().">.slideToggle()</a>
+        <a class="row"
+          href="http://jquery.page2page.ru/index.php5/Появление и иcчезновение элементов за счет прозрачности"
+          title="Скрывает элементы на странице за счет плавного изменения прозрачности.">.fadeIn()</a>
+        <a class="row"
+          href="http://jquery.page2page.ru/index.php5/Появление и иcчезновение элементов за счет прозрачности"
+          title="Показывает элементы на странице за счет плавного изменения прозрачности.">.fadeOut()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Установка заданной прозрачности у элемента"
+          title="Плавно изменяет прозрачность элементов.">.fadeTo()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Поочередное появление и скрытие элементов"
+          title="Поочередно скрывает/показывает элементы на странице, как это делают .fadeIn() и .fadeOut().">.fadeToggle()</a>
+      </div>
+      <div class="col" style="background-color: #7dd7ff;width: 320px;">
+        <h2>Events</h2>
+        <span class="row"
+          title="добавить обработчик myHandler события click ко ВСЕМ ссылкам на странице">links.on('click',
+          myHandler)</span>
+        <span class="row"
+          title=" удалить обработчик myHandler события click у ВСЕХ ссылок на странице">links.off('click',
+          myHandler)</span>
+        <span class="row"
+          title=" удалить обработчик myHandler события click у ВСЕХ ссылок на странице">links.on('click',
+          function(event){<br>
+          &nbsp;event.preventDefault();<br>
+          });</span>
+        <code>
+          links.on({<br>
+          &nbsp;mouseenter: function(event){<br>
+          &nbsp;&nbsp;$(this).css("background-color", "#000");<br>
+          &nbsp;},<br>
+          &nbsp;mouseleave: function(event){<br>
+          &nbsp;&nbsp;$(this).css("background-color", "#fff");<br>
+          &nbsp;},<br>
+          &nbsp;click: function(event){<br>
+          &nbsp;&nbsp;$(this).css("background-color", "#ccc");<br>
+          &nbsp;}<br>
+          });<br>
+        </code>
+        <div class="two-columns">
+          <div class="column">
+            <div class="box">
+              <h3>mouse</h3>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события click"
+                title="Устанавливает обработчик " клика" мышью по элементу, либо, запускает это событие.">.click()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события dblclick"
+                title="Устанавливает обработчик двойного " клика" мышью по элементу, либо, запускает это
+                событие.">.dblclick()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик события hover"
+                title="Устанавливает обработчик двух событий: появления/исчезновения курсора над элементом.">.hover()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события mousedown"
+                title="Устанавливает обработчик нажатия кнопки мыши, либо, запускает это событие.">.mousedown()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события mouseup"
+                title="Устанавливает обработчик поднятия кнопки мыши, либо, запускает это событие.">.mouseup()</a>
+              <a class="row"
+                href="http://jquery.page2page.ru/index.php5/Обработчик или источник появления курсора на элементе"
+                title="Устанавливает обработчик появления курсора в области элемента, либо, запускает это событие. Появление этого события, отработано лучше, чем стандартного mouseover.">.mouseenter()</a>
+              <a class="row"
+                href="http://jquery.page2page.ru/index.php5/Обработчик или источник выхода курсора из элемента"
+                title="Устанавливает обработчик выхода курсора из области элемента, либо, запускает это событие. Появление этого события, отработано лучше, чем стандартного mouseout.">.mouseleave()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события mousemove"
+                title="Устанавливает обработчик движения курсора в области элемента, либо, запускает это событие.">.mousemove()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события mouseout"
+                title="Устанавливает обработчик выхода курсора из области элемента, либо, запускает это событие.">.mouseout()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события mouseover"
+                title="Устанавливает обработчик появления курсора в области элемента, либо, запускает это событие.">.mouseover()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Поочередное выполнение функций"
+                title="Поочередно выполняет одну из двух или более заданных функций, в ответ на " клик" по
+                элементу.">.toggle()</a>
+            </div>
+            <div class="box">
+              <h3>Загрузка страницы</h3>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик готовности дерева DOM"
+                title="Устанавливает обработчик готовности дерева DOM.">.ready()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик события load"
+                title="Устанавливает обработчик завершения загрузки элемента.">.load()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик события unload"
+                title="Устанавливает обработчик ухода со страницы (при переходе по ссылке, закрытии браузера и.т.д.).">.unload()</a>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box">
+              <h3>клавиатура</h3>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события keydown"
+                title="Устанавливает обработчик перехода клавиши клавиатуры в нажатое состояние, либо, запускает это событие.">.keydown()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события keyup"
+                title="Устанавливает обработчик возвращение клавиши клавиатуры в ненажатое состояние, либо, запускает это событие.">.keyup()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик события keypress"
+                title="Устанавливает обработчик ввода символа с клавиатуры, либо, запускает это событие.">.keypress()</a>
+            </div>
+            <div class="box">
+              <h3>Элементы формы</h3>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события focus"
+                title="Устанавливает обработчик получения фокуса, либо, запускает это событие.">.focus()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события blur"
+                title="Устанавливает обработчик потери фокуса, либо, запускает это событие.">.blur()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик события focusin"
+                title="Устанавливает обработчик получения фокуса самим элементом или одним из его дочерних.">.focusin()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик события focusout"
+                title="Устанавливает обработчик получения фокуса самим элементом или одним из его дочерних.">.focusout()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события select"
+                title="Устанавливает обработчик выделения текста, либо, запускает это событие.">.select()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события submit"
+                title="Устанавливает обработчик отправки формы, либо, запускает это событие.">.submit()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события change"
+                title="Устанавливает обработчик изменения элемента формы, либо, запускает это событие.">.change()</a>
+            </div>
+            <div class="box">
+              <h3>события браузера</h3>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик события error"
+                title="Устанавливает обработчик ошибки при загрузке элементов (например отсутствие необходимой картинки на сервере).">.error()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события resize"
+                title="Устанавливает обработчик изменения размеров окна браузера, либо, запускает это событие.">.resize()</a>
+              <a class="row" href="http://jquery.page2page.ru/index.php5/Обработчик или источник события scroll"
+                title="Устанавливает обработчик " прокрутки" элементов документа, либо, запускает это
+                событие.">.scroll()</a>
+            </div>
+          </div>
+        </div>
+        <h3>базовые</h3>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/On"
+          title="Устанавливает обработчик события на выбранные элементы страницы.">.on()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Установка обработчика событий"
+          title="Устанавливает обработчик события на выбранные элементы страницы.">.bind()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Установка умного обработчика событий"
+          title="Устанавливает обработчик события на выбранные элементы страницы. Обработчик сработает и на элементах, появившихся после его установки.">.live()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Установка обработчика с заданным контекстом"
+          title="Устанавливает обработчик события на выбранные элементы страницы. Элементы выбираются с помощью уточняющего селектора. Обработчик будет действовать и на элементах, появившихся после его установки.">.delegate()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Установка разового обработчика событий"
+          title="Устанавливает обработчик события на выбранные элементы страницы, который сработает только по одному разу, на каждом из элементов.">.one()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление обработчика событий"
+          title="Удаляет обработчик событий у выбранных элементов страницы.">.unbind()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Off"
+          title="Удаляет обработчик событий (установленные с помощью метода .on()) у выбранных элементов страницы.">.off()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление умного обработчика событий"
+          title="Удаляет обработчик событий, который был установлен с помощью live().">.die()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Удаление обработчика с заданным контекстом"
+          title="Удаляет обработчик событий, который был установлен с помощью delegate().">.undelegate()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Вызов события"
+          title="Выполняет указанное событие и запускает его обработчик.">.trigger()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Вызов обработчика"
+          title="Запускает обработчик указанного события, без выполнения самого события.">.triggerHandler()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Изменение контекста функции"
+          title="По заданной функции, создает другую, внутри которой переменная <tt>this</tt> будет равна заданному значению.">jQuery.proxy()</a>
+        <a class="row" href="http://jquery.page2page.ru/index.php5/Объект event"
+          title="Объект, содержащий данные о текущем событии. Передается всем обработчикам событий.">event</a>
+      </div>
+      <hr>
+    </main>
+  </div>
+  <!-- 	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script> -->
+  <script type="text/javascript" src="js/jquery.main.js"></script>
+</body>
+
+</html>
